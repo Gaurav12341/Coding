@@ -13,7 +13,7 @@ void rotateArrayByOne(vector<int>& nums)
 
 void rotateArrayByK(vector<int>& nums, int k) 
 {
-    // k = k % nums.size(); // if if k is size of array, then we can rotate it by 0 times, so we take mod of k with size of array
+    k = k % nums.size(); // if if k is size of array, then we can rotate it by 0 times, so we take mod of k with size of array
     // for(int i=0 ; i<k ; i++){
     //     rotateArrayByOne(nums);
     // }
