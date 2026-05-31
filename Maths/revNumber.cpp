@@ -18,9 +18,9 @@ int reverseWithBoundary(int x) {
         int rem = 0;
         while (x!=0){
             rem = x%10;
-            if(rev > INT_MAX/10 || (rev == INT_MAX/10 && rem > 7))
+            if(rev > INT_MAX/10 || (rev == INT_MAX/10 && rem > 7)) //INT_MAX = 2147483647 so we cant cross that, hence only till 7
                 return 0; //overflow
-            if(rev < INT_MIN/10 || (rev == INT_MIN/10 && rem < -8))
+            if(rev < INT_MIN/10 || (rev == INT_MIN/10 && rem < -8)) //INT_MIN = -2147483648 so we cant cross that, hence only till -8
                 return 0;
             rev = rev*10 + rem;
             x=x/10;
