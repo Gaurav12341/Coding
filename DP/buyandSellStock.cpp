@@ -2,18 +2,28 @@
 using namespace std;
 
 int maxProfit(vector<int>& arr) {
-    int maxDiff = 0;
-    for(int i = 0; i < arr.size(); i++) {
+    // //brute force approach
+    // int maxDiff = 0;
+    // for(int i = 0; i < arr.size(); i++) {
 
-        for(int j = i + 1; j < arr.size(); j++) {
+    //     for(int j = i + 1; j < arr.size(); j++) {
 
-            if(arr[j] > arr[i]) {
-                maxDiff = max(maxDiff, arr[j] - arr[i]);
-            }
-        }
+    //         if(arr[j] > arr[i]) {
+    //             maxDiff = max(maxDiff, arr[j] - arr[i]);
+    //         }
+    //     }
+    // }
+    // return maxDiff;
+    // // TC: O(n^2) SC: O(1)
+
+    //dynamic programming approach
+    int minPrice =arr[0];
+    int maxProfit = 0;
+    for(int i=1; i<arr.size();i++){
+        minPrice=min(minPrice, arr[i]);
+        maxProfit = max(maxProfit, arr[i]-minPrice);
     }
-    return maxDiff;
-    // TC: O(n^2) SC: O(1)
+    return maxProfit; //tc: O(n) SC: O(1)
 }
 
 int main() {
