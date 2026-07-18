@@ -47,6 +47,7 @@ int longestConsecutive(vector<int> &nums)
     // TC: O(nlogn) + O(n) = O(nlogn) SC: O(1)
 
     //Optimal
+    //understanding the problem - we need to find the longest consecutive sequence in an unsorted array. We can use a hash set to store the elements of the array and then iterate through the set to find the longest consecutive sequence. The key idea is to only start counting when we find the beginning of a sequence (i.e., when the previous number is not in the set).
     unordered_set<int> st;
     for(int i=0; i<nums.size(); i++){
         st.insert(nums[i]);  // sometimes O(n) sometimes O(1) but average case is O(1)
